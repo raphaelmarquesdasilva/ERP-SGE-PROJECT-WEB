@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/01" // Adjust the path to store the client relative to this schema
+}
+
+datasource db {
+  provider = "sqlserver" // Adjust if using a different database provider, e.g., "postgresql"
+  url      = env("DATABASE_URL_01") // Reference the environment variable for the database connection
+}
+
+model AcessoUsuario {
+  Id_Usuario Int    @id @db.Int
+  Opcao      String @db.Char(60)
+  Acesso     Int?   @db.Int
+}
+
+model Usuarios {
+  Id_Usuario        Int       @id @db.Int
+  Usuario           String?   @db.Char(30)
+  Senha             String?   @db.Char(100)
+  DtHrUltAcesso     DateTime? @db.DateTime
+  Id_Filial         Int?      @db.Int
+  Id_Vendedor       Int?      @db.Int
+  SeusMov           Int?      @db.Int
+  SolicAutCanc      Int?      @db.Int
+  LiberaDebito      Int?      @db.Int
+  LiberaEstoque     Int?      @db.Int
+  MostraPreco       Int?      @db.Int
+  Faturamento       Int?      @db.Int
+  liberapreco       Int?      @db.Int
+  MultplaInstancia  Int?      @db.Int
+  AlteraFinanceiro  Int?      @db.Int
+  AlterarProduto    Int?      @db.Int
+  AlterarPessoa     Int?      @db.Int
+  AlterarInstalacao Int?      @db.Int
+  ImpResumido       Int?      @db.Int
+  email             String?   @db.Char(200)
+  EmailAltPrd       Int?      @db.Int
+  id_entregador     Int?      @db.Int
+  SemMovEst         Int?      @db.Int
+  VERIFICARESTMIN   Int?      @db.Int
+  EnviarFinanc      Int?      @db.Int
+  LIMPAESTOQUE      Int?      @db.Int
+  ATUALIZAESTOQUE   Int?      @db.Int
+  ExcluirReg        Int?      @db.Int
+  ATLZ_BD           Int?      @db.Int
+  ALTITEMVD         Int?      @db.Int
+  BLOQDESC          Int?      @db.Int
+  telemarketing     Int?      @db.Int
+  CadDistrib        Int?      @db.Int
+  VerSldDeposito    Int?      @db.Int
+  AtivarProduto     Int?      @db.Int
+  CancelarNF        Int?      @db.Int
+  CancVenda         Int?      @db.Int
+  AlterarVenda      Int?      @db.Int
+  IgnoraDescVd      Int?      @db.Int
+  CancAmostra       Int?      @db.Int
+  CancMovEst        Int?      @db.Int
+  AltSenha          Int?      @db.Int
+  VendedorBalcao    Int?      @db.Int
+  PrcDistrib        Int?      @db.Int
+  Aut_CadPF         Int?      @db.Int
+  UsuCaixaLj        Int?      @db.Int
+  LiberaPrcCusto    Int?      @db.Int
+  MostraCustoVd     Int?      @db.Int
+  BxVdFrenteLj      Int?      @db.Int
+  UsaPrcEspDist     Int?      @db.Int
+  Id_Promocao       Int?      @db.Int
+  liberatroca       Int?      @db.Int
+  CancMapaEntr      Int?      @db.Int
+  TpAtend           Int?      @db.Int
+  EmailCobranca     Int?      @db.Int
+}
